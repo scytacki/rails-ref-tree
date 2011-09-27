@@ -1,7 +1,7 @@
 I've been working on a rails development tool to show the references to particular partials. 
 Below is an example for the show_for_student partial:
 
-<img src="http://screencast.com/t/Xyg23js6p7">
+<img src="http://content.screencast.com/users/scytacki/folders/Jing/media/308f029c-b343-4064-8797-1c15ae1971b2/00000075.png"/>
 
 basically this says:
 
