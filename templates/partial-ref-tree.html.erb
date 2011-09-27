@@ -1,0 +1,44 @@
+<html>
+<head>
+  <script type="text/javascript" src="http://cachedcommons.org/cache/jquery/1.4.2/javascripts/jquery.js"></script>
+  <script type="text/javascript" src="file://localhost/Users/scytacki/Development/rails-ref-tree/javascript/jstree_pre1.0_fix_1/jquery.jstree.js"></script>
+</head>
+<body>
+  <div id="tree">    
+    <ul>
+      <li><a href="#">Referring Files</a>
+        <ul>
+          <% referer_files.each do |file| %>
+            <% references = referers[file]%>
+            <li><a href="#"><%= file %> (<%= references.size %>)</a>
+              <ul>
+                <% references.each do |ref| %>
+                  <li><a href="#"><%= ref.partial %> -- <%= ref.raw_partial %> -- <%= ref.whole_line %></a></li>
+                <% end %>
+              </ul>
+          <% end %>
+        </ul>
+      </li>
+      <li><a href="#">Partials</a>
+        <ul>
+          <% partial_files.each do |file| %>
+            <% references = partials[file]%>
+            <li><a href="#"><%= file %> (<%= references.size %>)</a>
+              <ul>
+                <%= list_partial_references(references) %>
+              </ul>
+          <% end %>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <script type="text/javascript">
+    jQuery("#tree").jstree({
+        "core" : {
+          "animation" : 100
+        }, 
+    		"plugins" : [ "themes", "html_data", "ui" ]
+    	});
+  </script>
+</body>
+</html>
