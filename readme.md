@@ -1,7 +1,7 @@
 I've been working on a rails development tool to show the references to particular partials. 
 Below is an example for the show_for_student partial:
 
-![Example reference tree](http://screencast.com/t/Xyg23js6p7)
+<img src="http://screencast.com/t/Xyg23js6p7">
 
 basically this says:
 
